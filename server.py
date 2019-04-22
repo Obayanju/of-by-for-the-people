@@ -3,7 +3,7 @@ from http import cookies
 from urllib.parse import parse_qs
 import json
 from passlib.hash import pbkdf2_sha256
-
+import sys
 from democracy_db import DemocracyDB
 from user_db import UserDB
 from session_store import SessionStore
@@ -298,7 +298,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
 def run():
     userdb = UserDB()
     userdb.createUserTable()
-    userdb = None 
+    userdb = None
     # db = DemocracyDB()
     # db.createGovernorTable()
     # db = None
