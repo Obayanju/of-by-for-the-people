@@ -68,7 +68,7 @@ class UserDB:
     def createUserTable(self):
         self.cursor.execute(
         """ 
-        CREATE TABLE user(
+        CREATE TABLE IF NOT EXISTS user(
         user_id INTEGER PRIMARY KEY,
         first_name text not null,
         last_name text not null,
