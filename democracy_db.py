@@ -4,13 +4,6 @@ import psycopg2
 import psycopg2.extras
 import urllib.parse
 
-def dict_factory(cursor, row):
-    d = {}
-    for idx, col in enumerate(cursor.description):
-        d[col[0]] = row[idx]
-    return d
-
-
 class DemocracyDB:
     def __init__(self):
         urllib.parse.uses_netloc.append("postgres")
@@ -26,17 +19,12 @@ class DemocracyDB:
         )
 
         self.cursor = self.connection.cursor()
-        # self.connection = sqlite3.connect("democracy_db.db")
-        # self.connection.row_factory = dict_factory
-        # self.cursor = self.connection.cursor()
 
     def __del__(self):
         self.connection.close()
 
     def createGovernorTable(self):
-        self.cursor.execute(
-        "CREATE TABLE IF NOT EXISTS governors (id serial PRIMARY KEY, name TEXT, duties TEXT)"
-        )
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS governors (id serial PRIMARY KEY, name TEXT, duties TEXT)")
         self.connection.commit()
         return
 
