@@ -55,7 +55,8 @@ class UserDB:
         return True
 
     def createUserTable(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS user (user_id SERIAL PRIMARY KEY,first_name text not null,last_name text not null,email text not null unique,hash text not null)")
+        # self.cursor.execute("CREATE TABLE IF NOT EXISTS user (user_id SERIAL PRIMARY KEY,first_name text not null,last_name text not null,email text not null unique,hash text not null)")
+        self.cursor.execute("CREATE TABLE IF NOT EXISTS user (user_id SERIAL PRIMARY KEY,first_name text, last_name text, email text, hash text)")
         self.connection.commit()
         return
 
