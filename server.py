@@ -1,6 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from http import cookies
-from urllib.parse import parse_qs
+from urllib.parse import urlparse, parse_qs
 import json
 from passlib.hash import pbkdf2_sha256
 import sys
@@ -8,7 +8,7 @@ from democracy_db import DemocracyDB
 from user_db import UserDB
 from session_store import SessionStore
 
-gSessionStore = SessionStore()
+#gSessionStore = SessionStore()
 
 
 class MyRequestHandler(BaseHTTPRequestHandler):
