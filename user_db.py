@@ -69,7 +69,7 @@ class UserDB:
         self.cursor.execute(
         """ 
         CREATE TABLE IF NOT EXISTS user(
-        user_id INTEGER PRIMARY KEY,
+        user_id serial PRIMARY KEY,
         first_name text not null,
         last_name text not null,
         email text not null unique,
