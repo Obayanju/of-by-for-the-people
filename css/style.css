@@ -1,0 +1,56 @@
+html {
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+}
+body {
+  display: none;
+}
+.title {
+  margin-bottom: 15px;
+}
+.container {
+  padding: 50px 10px 10px;
+}
+.container-register {
+  display: none;
+}
+.container-posts {
+  display: none;
+}
+#login-register-switch {
+  margin: 30px 30px 0 30px;
+}
+.new-item {
+  margin-bottom: 10px;
+}
+.item {
+  /* visibility: hidden; */
+  display: none;
+  width: 100%;
+  color: white;
+  background-color: #546e7a;
+  padding: 0.5em;
+  margin-bottom: 25px;
+  border-radius: 2px;
+}
+.governor-name {
+  font-size: 24px;
+  font-weight: 300;
+}
+.item-content .governor-promises {
+  list-style-type: none;
+  padding: 0;
+}
+.item-content {
+  line-height: 1.6;
+  padding: 24px;
+}
+.item-action {
+  padding: 0 24px 10px;
+}
+.new-duty-form {
+  display: none;
+}

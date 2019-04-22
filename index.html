@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <title>Democracy</title>
+  </head>
+  <body>
+    <a id="login-register-switch" class="waves-effect waves-light btn"
+      >Register Form</a
+    >
+    <!-- Login Form -->
+    <div class="container">
+      <div class="container-login">
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate" />
+                <label for="email">Email</label>
+                <span
+                  class="helper-text"
+                  data-error="wrong"
+                  data-success="right"
+                ></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate" />
+                <label for="password">Password</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <a id="login" class="waves-effect waves-light btn">Login</a>
+      </div>
+      <!-- Registration Form -->
+      <div class="container-register">
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate" />
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate" />
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate" />
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate" />
+                <label for="email">Email</label>
+                <span
+                  class="helper-text"
+                  data-error="wrong"
+                  data-success="right"
+                ></span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <a id="register" class="waves-effect waves-light btn">Register</a>
+      </div>
+
+      <!-- User Posts -->
+      <div class="container-posts">
+        <a id="log-out" class="waves-effect waves-light btn">Log out</a>
+        <h1 class="title">Democracy</h1>
+        <a class="new-item btn-floating btn-large waves-effect waves-light red"
+          ><i class="material-icons">add</i></a
+        >
+        <div class="new-duty-form">
+          <form method="post">
+            <div>
+              <label for="name">Governor Name:</label
+              ><input name="name" id="name" />
+            </div>
+            <div>
+              <label for="duty">Duty:</label><input name="duty" id="duty" />
+            </div>
+            <div><button class="add-new-role-btn">Add</button></div>
+          </form>
+        </div>
+        <div class="item-list">
+          <div class="item">
+            <div class="item-content">
+              <span class="governor-name">Governor xyz</span>
+              <ul class="governor-promises"></ul>
+            </div>
+            <div class="item-action">
+              <button class="edit waves-effect waves-light btn-small">
+                Edit
+              </button>
+              <button class="delete waves-effect waves-light btn-small">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
