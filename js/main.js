@@ -1,4 +1,4 @@
-const BASE_URL = "https://of-by-for-the-people.herokuapp.com/";
+const BASE_URL = "https://my-democracy-app.herokuapp.com/";
 class GovernorDuties {
   constructor() {
     this.newItem = null;
