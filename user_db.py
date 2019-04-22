@@ -72,8 +72,7 @@ class UserDB:
                     first_name text not NULL,\
                     last_name text not null,\
                     email text not null unique,\
-                    hash text not null\
-                )"
+                    hash text not null)"
         )
         self.connection.commit()
         return
