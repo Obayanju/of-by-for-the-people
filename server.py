@@ -296,12 +296,12 @@ class MyRequestHandler(BaseHTTPRequestHandler):
 
 
 def run():
-    userdb = UserDB()
-    userdb.createUserTable()
-    userdb = None
-    # db = DemocracyDB()
-    # db.createGovernorTable()
-    # db = None
+    # userdb = UserDB()
+    # userdb.createUserTable()
+    # userdb = None
+    db = DemocracyDB()
+    db.createGovernorTable()
+    db = None
 
     port = 8080
     if len(sys.argv) > 1:

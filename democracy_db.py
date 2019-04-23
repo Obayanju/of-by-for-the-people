@@ -4,6 +4,7 @@ import psycopg2
 import psycopg2.extras
 import urllib.parse
 
+
 class DemocracyDB:
     def __init__(self):
         urllib.parse.uses_netloc.append("postgres")
@@ -24,7 +25,8 @@ class DemocracyDB:
         self.connection.close()
 
     def createGovernorTable(self):
-        self.cursor.execute("CREATE TABLE IF NOT EXISTS governors (id SERIAL PRIMARY KEY, name TEXT, duties TEXT)")
+        self.cursor.execute(
+            "CREATE TABLE IF NOT EXISTS governors (id SERIAL PRIMARY KEY, name TEXT, duties TEXT)")
         self.connection.commit()
         return
 
