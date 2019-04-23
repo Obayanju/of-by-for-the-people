@@ -126,7 +126,7 @@ class GovernorDuties {
         govrNameEl.value
       )}&duty=${encodeURIComponent(govrDutiesEl.value)}`;
 
-      fetch(`http://localhost:8080/governors/${id}`, {
+      fetch(`${BASE_URL}governors/${id}`, {
         method: "PUT",
         body: data,
         credentials: "include",
@@ -143,7 +143,7 @@ class GovernorDuties {
   }
 
   preFillForm(id, nameEl, dutiesEl) {
-    fetch(`http://localhost:8080/governors/${id}`, {
+    fetch(`${BASE_URL}governors/${id}`, {
       credentials: "include"
     }).then(response => {
       response.json().then(data => {
@@ -154,7 +154,7 @@ class GovernorDuties {
   }
 
   deleteRole(id) {
-    fetch(`http://localhost:8080/governors/${id}`, {
+    fetch(`${BASE_URL}governors/${id}`, {
       method: "DELETE",
       credentials: "include"
     }).then(response => {
