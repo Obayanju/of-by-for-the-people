@@ -24,9 +24,11 @@ class DemocracyDB:
     def __del__(self):
         self.connection.close()
 
-    def createGovernorTable(self):
+    def createGovrAndUserTable(self):
         self.cursor.execute(
             "CREATE TABLE IF NOT EXISTS governors (id SERIAL PRIMARY KEY, name TEXT, duties TEXT)")
+        self.cursor.execute(
+            "CREATE TABLE IF NOT EXISTS user (user_id SERIAL PRIMARY KEY,first_name TEXT, last_name TEXT, email TEXT, hash TEXT)")
         self.connection.commit()
         return
 

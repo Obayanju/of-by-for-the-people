@@ -296,15 +296,15 @@ class MyRequestHandler(BaseHTTPRequestHandler):
 
 
 def run():
-    # If finally works after switching the order of the creation of the two tables
+    # UserDB actually still doesn't work
     # why ???
     db = DemocracyDB()
-    db.createGovernorTable()
+    db.createGovrAndUserTable()
     db = None
 
-    userdb = UserDB()
-    userdb.createUserTable()
-    userdb = None
+    # userdb = UserDB()
+    # userdb.createUserTable()
+    # userdb = None
 
     port = 8080
     if len(sys.argv) > 1:
