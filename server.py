@@ -8,7 +8,7 @@ from democracy_db import DemocracyDB
 from user_db import UserDB
 from session_store import SessionStore
 
-#gSessionStore = SessionStore()
+gSessionStore = SessionStore()
 
 
 class MyRequestHandler(BaseHTTPRequestHandler):
