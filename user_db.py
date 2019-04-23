@@ -59,4 +59,4 @@ class UserDB:
         self.cursor.execute(
             "CREATE TABLE IF NOT EXISTS user_account (user_id SERIAL PRIMARY KEY,first_name TEXT, last_name TEXT, email TEXT, hash TEXT)")
         self.connection.commit()
-    return
+        return
