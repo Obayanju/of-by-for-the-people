@@ -34,12 +34,12 @@ class UserDB:
         return pbkdf2_sha256.verify(pw, myhash)
 
     def validateEmailUniqueness(self, email):
-        sql = "SELECT user_id FROM user WHERE email=%s"
+        sql = "SELECT user_id FROM user_account WHERE email=%s"
         self.cursor.execute(sql, [email])
         return self.cursor.fetchone()
 
     def getUserByEmail(self, email):
-        sql = "SELECT user_id, hash FROM user WHERE email=%s"
+        sql = "SELECT user_id, hash FROM user_account WHERE email=%s"
         self.cursor.execute(sql, [email])
         return self.cursor.fetchone()
 
@@ -51,12 +51,12 @@ class UserDB:
         myhash = self.hashPW(password)
         t = (f_name, l_name, email, myhash)
         self.cursor.execute(
-            "INSERT INTO user(first_name, last_name, email, hash) VALUES(%s, %s, %s, %s)", t)
+            "INSERT INTO user_account(first_name, last_name, email, hash) VALUES(%s, %s, %s, %s)", t)
         self.connection.commit()
         return True
 
     def createUserTable(self):
-        # self.cursor.execute("CREATE TABLE IF NOT EXISTS user (user_id SERIAL PRIMARY KEY,first_name text not null,last_name text not null,email text not null unique,hash text not null)")
         self.cursor.execute(
-            "CREATE TABLE IF NOT EXISTS user (user_id SERIAL PRIMARY KEY,first_name TEXT, last_name TEXT, email TEXT, hash TEXT)")
+            "CREATE TABLE IF NOT EXISTS user_account (user_id SERIAL PRIMARY KEY,first_name TEXT, last_name TEXT, email TEXT, hash TEXT)")
         self.connection.commit()
+    return
