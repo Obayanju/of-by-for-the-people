@@ -1,4 +1,4 @@
-# of-by-for-the-people 
+# s19-resourceful-Obayanju
 ### Resources
 A sqlite3 database with a governors and user table.
 The governors table consists of an id, a name, and duties.
@@ -7,30 +7,35 @@ The user table consists of an user_id, first name, last name, email, and passwor
 ### Schema
 ```sql
 CREATE TABLE governors (
-id INTEGER PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 name TEXT,
 duties TEXT);
 
-CREATE TABLE user(
-user_id INTEGER PRIMARY KEY,
-first_name text not null,
-last_name text not null,
-email text not null unique,
-hash text not null);
+CREATE TABLE user_account(
+user_id SERIAL PRIMARY KEY,
+first_name TEXT,
+last_name TEXT,
+email TEXT,
+hash TEXT);
 ```
 
 ### Password Hashing
 [PassLib](https://passlib.readthedocs.io/en/stable/#) Library was used
 
+### Hosting
+Heroku and Github Pages
+
 ### REST ENDPOINTS
-|     Name | HTTP method |                                         Path |
-| -------: | ----------: | -------------------------------------------: |
-|     List |         GET |       http://localhost:port-number/governors |
-| Retrieve |         GET | http://localhost:port-number/governors/${id} |
-|   Create |        POST |       http://localhost:port-number/governors |
-|  Replace |         PUT | http://localhost:port-number/governors/${id} |
-|   Delete |      DELETE | http://localhost:port-number/governors/${id} |
-|    Login |        POST |        http://localhost:port-number/sessions |
-| Register |        POST |           http://localhost:port-number/users |
+BASE_URL="https://my-democracy-app.heroku.com/"
+
+|     Name | HTTP method |                     Path |
+| -------: | ----------: | -----------------------: |
+|     List |         GET |       BASE_URL+governors |
+| Retrieve |         GET | BASE_URL+governors/${id} |
+|   Create |        POST |       BASE_URL+governors |
+|  Replace |         PUT | BASE_URL+governors/${id} |
+|   Delete |      DELETE | BASE_URL+governors/${id} |
+|    Login |        POST |        BASE_URL+sessions |
+| Register |        POST |           BASE_URL+users |
 
 port-number is currently set to 8080
